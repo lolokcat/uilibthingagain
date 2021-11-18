@@ -355,14 +355,14 @@ function lib:CreateWindow(hubname)
 			Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 			Frame.BorderSizePixel = 0
 			Frame.Position = UDim2.new(0, 0, 0.939999998, 0)
-			Frame.Size = UDim2.new(0, 463, 0, 1)
+			Frame.Size = UDim2.new(0, 463, 0, 0)
 
 			ScrollingFrame.Parent = Frame
 			ScrollingFrame.Active = true
 			ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			ScrollingFrame.BackgroundTransparency = 2.000
 			ScrollingFrame.BorderSizePixel = 0
-			ScrollingFrame.Size = UDim2.new(0, 461, 0, 241)
+			ScrollingFrame.Size = UDim2.new(0, 461, 0, 0)
 			ScrollingFrame.ScrollBarThickness = 5
 			
 			local UIListLayout35 = Instance.new("UIListLayout")
