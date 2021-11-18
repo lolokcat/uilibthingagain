@@ -1,3 +1,202 @@
 local lib = {}
-lib.gui = game:GetObjects("rbxassetid://8034152585")[1]
-lib.gui.Parent = game.CoreGui
+
+function lib:CreateWindow(hubname)
+        local UI = Instance.new("ScreenGui")
+        local pageFolder = Instance.new("Folder")
+        local UIListLayout = Instance.new("UIListLayout")
+        local UIPadding = Instance.new("UIPadding")
+        local Main = Instance.new("Frame")
+        local UICorner = Instance.new("UICorner")
+        local Pattern = Instance.new("ImageLabel")
+        local HUD = Instance.new("Frame")
+        local UICorner_2 = Instance.new("UICorner")
+        local home = Instance.new("ImageButton")
+        local TextLabel = Instance.new("TextLabel")
+        local allTabs = Instance.new("ScrollingFrame")
+        local UICorner_3 = Instance.new("UICorner")
+        local UIListLayout_2 = Instance.new("UIListLayout")
+        local UIPadding_2 = Instance.new("UIPadding")
+        local Shadow = Instance.new("Frame")
+        local shadowHolder = Instance.new("Frame")
+        local umbraShadow = Instance.new("ImageLabel")
+        local ambientShadow = Instance.new("ImageLabel")
+        local penumbraShadow = Instance.new("ImageLabel")
+
+        UI.Name = "UI"
+        UI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+        UI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+        pageFolder.Name = "pageFolder"
+        pageFolder.Parent = UI
+
+        UIListLayout.Parent = Page
+        UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+        UIListLayout.Padding = UDim.new(0, 3)
+
+        UIPadding.Parent = Page
+        UIPadding.PaddingTop = UDim.new(0, 10)
+
+        Main.Name = "Main"
+        Main.Parent = UI
+        Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+        Main.Position = UDim2.new(0.251830161, 0, 0.425668448, 0)
+        Main.Size = UDim2.new(0, 494, 0, 389)
+
+        UICorner.CornerRadius = UDim.new(0, 3)
+        UICorner.Parent = Main
+
+        Pattern.Name = "Pattern"
+        Pattern.Parent = Main
+        Pattern.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Pattern.BackgroundTransparency = 1.000
+        Pattern.Position = UDim2.new(0.0121457493, 0, 0.0694086626, 0)
+        Pattern.Size = UDim2.new(0, 488, 0, 361)
+        Pattern.Image = "rbxassetid://121480522"
+        Pattern.ImageTransparency = 0.600
+        Pattern.ScaleType = Enum.ScaleType.Tile
+        Pattern.SliceCenter = Rect.new(0, 256, 0, 256)
+        Pattern.TileSize = UDim2.new(0, 45, 0, 45)
+
+        HUD.Name = "HUD"
+        HUD.Parent = Main
+        HUD.BackgroundColor3 = Color3.fromRGB(63, 63, 63)
+        HUD.Position = UDim2.new(-0.001206371, 0, -0.0318958908, 0)
+        HUD.Size = UDim2.new(0, 495, 0, 39)
+
+        UICorner_2.CornerRadius = UDim.new(0, 3)
+        UICorner_2.Parent = HUD
+
+        home.Name = "home"
+        home.Parent = HUD
+        home.BackgroundTransparency = 1.000
+        home.Position = UDim2.new(0.0271795541, 0, 0.163375825, 0)
+        home.Size = UDim2.new(0, 25, 0, 25)
+        home.ZIndex = 2
+        home.Image = "rbxassetid://3926305904"
+        home.ImageRectOffset = Vector2.new(964, 204)
+        home.ImageRectSize = Vector2.new(36, 36)
+
+        TextLabel.Parent = HUD
+        TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.BackgroundTransparency = 1.000
+        TextLabel.Position = UDim2.new(0.0929292962, 0, 0, 0)
+        TextLabel.Size = UDim2.new(0, 448, 0, 39)
+        TextLabel.Font = Enum.Font.Gotham
+        TextLabel.Text = hubname
+        TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+        TextLabel.TextSize = 14.000
+        TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+        allTabs.Name = "allTabs"
+        allTabs.Parent = Main
+        allTabs.Active = true
+        allTabs.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
+        allTabs.BorderSizePixel = 0
+        allTabs.Position = UDim2.new(-0.311592698, 0, -0.0318958126, 0)
+        allTabs.Size = UDim2.new(0, 159, 0, 401)
+        allTabs.ZIndex = 3
+
+        UICorner_3.CornerRadius = UDim.new(0, 3)
+        UICorner_3.Parent = allTabs
+
+        UIListLayout_2.Parent = allTabs
+        UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
+        UIListLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+        UIListLayout_2.Padding = UDim.new(0, 3)
+
+        UIPadding_2.Parent = allTabs
+        UIPadding_2.PaddingTop = UDim.new(0, 10)
+
+        Shadow.Name = "Shadow"
+        Shadow.Parent = Main
+        Shadow.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Shadow.BackgroundTransparency = 1.000
+        Shadow.Position = UDim2.new(0.139824301, 0, 0.412834227, 0)
+        Shadow.Size = UDim2.new(0, 647, 0, 401)
+
+        shadowHolder.Name = "shadowHolder"
+        shadowHolder.Parent = Shadow
+        shadowHolder.BackgroundTransparency = 1.000
+        shadowHolder.Size = UDim2.new(1, 0, 1, 0)
+
+        umbraShadow.Name = "umbraShadow"
+        umbraShadow.Parent = shadowHolder
+        umbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+        umbraShadow.BackgroundTransparency = 1.000
+        umbraShadow.Position = UDim2.new(0.155332267, 0, 0.0536159873, 6)
+        umbraShadow.Size = UDim2.new(1.01400006, 10, 1.03199995, 10)
+        umbraShadow.Image = "rbxassetid://1316045217"
+        umbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+        umbraShadow.ImageTransparency = 0.860
+        umbraShadow.ScaleType = Enum.ScaleType.Slice
+        umbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+
+        ambientShadow.Name = "ambientShadow"
+        ambientShadow.Parent = shadowHolder
+        ambientShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+        ambientShadow.BackgroundTransparency = 1.000
+        ambientShadow.Position = UDim2.new(0.156105101, 0, 0.054862842, 6)
+        ambientShadow.Size = UDim2.new(1.01391041, 10, 1.03241885, 10)
+        ambientShadow.Image = "rbxassetid://1316045217"
+        ambientShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+        ambientShadow.ImageTransparency = 0.880
+        ambientShadow.ScaleType = Enum.ScaleType.Slice
+        ambientShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+
+        penumbraShadow.Name = "penumbraShadow"
+        penumbraShadow.Parent = shadowHolder
+        penumbraShadow.AnchorPoint = Vector2.new(0.5, 0.5)
+        penumbraShadow.BackgroundTransparency = 1.000
+        penumbraShadow.Position = UDim2.new(0.155332267, 0, 0.0536159873, 6)
+        penumbraShadow.Size = UDim2.new(1.01400006, 10, 1.03199995, 10)
+        penumbraShadow.Image = "rbxassetid://1316045217"
+        penumbraShadow.ImageColor3 = Color3.fromRGB(0, 0, 0)
+        penumbraShadow.ImageTransparency = 0.880
+        penumbraShadow.ScaleType = Enum.ScaleType.Slice
+        penumbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+        
+        local TabHandler = {}
+        
+        function TabHandler:Tab(name)
+                local Page = Instance.new("ScrollingFrame")
+                local TabButton = Instance.new("TextButton")
+                local UICorner_4 = Instance.new("UICorner")
+                
+                Page.Name = "Page"
+                Page.Parent = pageFolder
+                Page.Active = true
+                Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                Page.BackgroundTransparency = 1.000
+                Page.BorderSizePixel = 0
+                Page.Position = UDim2.new(0.256222546, 0, 0.454545468, 0)
+                Page.Size = UDim2.new(0, 487, 0, 361)
+                Page.ZIndex = 2
+                Page.ScrollBarThickness = 4
+                
+                TabButton.Name = "TabButton"
+                TabButton.Parent = allTabs
+                TabButton.BackgroundColor3 = Color3.fromRGB(31, 31, 31)
+                TabButton.Position = UDim2.new(0, 0, 0.0598503724, 0)
+                TabButton.Size = UDim2.new(0, 111, 0, 26)
+                TabButton.Font = Enum.Font.Gotham
+                TabButton.Text = "Main"
+                TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+                TabButton.TextSize = 14.000
+
+                UICorner_4.CornerRadius = UDim.new(0, 3)
+                UICorner_4.Parent = TabButton
+                
+                for i,v in next, pageFolder:GetChildren() do
+                        v.Visible = false
+                end 
+                Page.Visible = true
+                
+                TabButton.MouseButton1Click:Connect(function()
+                for i,v in next, pageFolder:GetChildren() do
+                        v.Visible = false
+                end 
+                Page.Visible = true
+                end)   
+        end
+end
