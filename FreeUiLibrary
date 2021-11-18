@@ -374,7 +374,7 @@ function lib:CreateWindow(hubname)
 			for i,v in pairs(options) do 
 				local TextButton = Instance.new("TextButton")
 
-				TextButton.Parent = game.StarterGui.UI.pageFolder.Page.Dropdown.Frame.ScrollingFrame
+				TextButton.Parent = ScrollingFrame
 				TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 				TextButton.BackgroundTransparency = 1.000
 				TextButton.Size = UDim2.new(0, 463, 0, 50)
