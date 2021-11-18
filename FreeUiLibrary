@@ -248,7 +248,7 @@ function lib:CreateWindow(hubname)
                         TextField:GetPropertyChangedSignal("Text"):Connect(function()
 		            callback(TextField.Text)
                         end)
-                 end
+                end
                 return ElementHandler
         end
         return TabHandler
