@@ -295,12 +295,12 @@ function lib:CreateWindow(hubname)
 			check_box.ImageRectOffset = Vector2.new(4, 836)
 			check_box.ImageRectSize = Vector2.new(48, 48)
 			check_box.ImageTransparency = 1.000
-	
-			local Dropped = state
 			
 			local function Tween(asset, info, thing)
 				game:GetService("TweenService"):Create(asset, info, thing):Play()
 			end	
+	
+			local Dropped = state
 
 			Toggle.MouseButton1Click:Connect(function()
 				if Dropped == true then
