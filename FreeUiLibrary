@@ -249,6 +249,67 @@ function lib:CreateWindow(hubname)
 		            callback(TextField.Text)
                         end)
                 end
+		
+		function ElementHandler:Toggle(name, callback)
+		        local name = name or "TextButton"
+                        local callback = callback or function() end
+			local Toggle = Instance.new("TextButton")
+			local UICorner = Instance.new("UICorner")
+			local crop_square = Instance.new("ImageButton")
+			local check_box = Instance.new("ImageButton")
+
+			Toggle.Name = "Toggle"
+			Toggle.Parent = game.StarterGui.UI.pageFolder.Page
+			Toggle.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+			Toggle.Position = UDim2.new(0.0338809043, 0, 0.0277008303, 0)
+			Toggle.Size = UDim2.new(0, 463, 0, 50)
+			Toggle.AutoButtonColor = false
+			Toggle.Font = Enum.Font.Gotham
+			Toggle.Text = name
+			Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Toggle.TextSize = 19.000
+
+			UICorner.CornerRadius = UDim.new(0, 3)
+			UICorner.Parent = Toggle
+
+			crop_square.Name = "crop_square"
+			crop_square.Parent = Toggle
+			crop_square.BackgroundTransparency = 1.000
+			crop_square.LayoutOrder = 5
+			crop_square.Position = UDim2.new(0.901000023, 0, 0.219999999, 0)
+			crop_square.Selectable = false
+			crop_square.Size = UDim2.new(0, 30, 0, 30)
+			crop_square.ZIndex = 2
+			crop_square.Image = "rbxassetid://3926305904"
+			crop_square.ImageRectOffset = Vector2.new(884, 644)
+			crop_square.ImageRectSize = Vector2.new(36, 36)
+
+			check_box.Name = "check_box"
+			check_box.Parent = Toggle
+			check_box.BackgroundTransparency = 1.000
+			check_box.LayoutOrder = 4
+			check_box.Position = UDim2.new(0.901000023, 0, 0.219999999, 0)
+			check_box.Size = UDim2.new(0, 30, 0, 30)
+			check_box.ZIndex = 2
+			check_box.Image = "rbxassetid://3926311105"
+			check_box.ImageRectOffset = Vector2.new(4, 836)
+			check_box.ImageRectSize = Vector2.new(48, 48)
+			check_box.ImageTransparency = 1.000
+		
+			local Dropped = state
+
+			Toggle.MouseButton1Click:Connect(function()
+				if Dropped == true then
+					Dropped = false
+					Tween(check_box, TweenInfo.new(0.3), {ImageTransparency = 1})
+					callback(Dropped)
+				elseif Dropped == false then
+					Dropped = true
+					Tween(check_box, TweenInfo.new(0.3), {ImageTransparency = 0})
+					callback(Dropped)
+				end
+			end)
+		end
                 return ElementHandler
         end
         return TabHandler
