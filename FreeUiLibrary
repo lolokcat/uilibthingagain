@@ -225,6 +225,30 @@ function lib:CreateWindow(hubname)
                                 callback()
                         end)
                 end
+                
+                function ElementHandler:TextField(callback)
+                        local callback = callback or function() end
+                        
+                        local TextField = Instance.new("TextBox")
+                        local UICorner = Instance.new("UICorner")
+
+                        TextField.Name = "TextField"
+                        TextField.Parent = Page
+                        TextField.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+                        TextField.Size = UDim2.new(0, 463, 0, 50)
+                        TextField.Font = Enum.Font.Gotham
+                        TextField.Text = ""
+                        TextField.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        TextField.TextSize = 19.000
+                        TextField.TextWrapped = true
+
+                        UICorner.CornerRadius = UDim.new(0, 3)
+                        UICorner.Parent = TextField
+                        
+                        TextField:GetPropertyChangedSignal("Text"):Connect(function()
+		            callback(TextField.Text)
+                        end)
+                 end
                 return ElementHandler
         end
         return TabHandler
