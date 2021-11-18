@@ -365,11 +365,11 @@ function lib:CreateWindow(hubname)
 			ScrollingFrame.Size = UDim2.new(0, 461, 0, 241)
 			ScrollingFrame.ScrollBarThickness = 5
 			
-			local UIListLayout = Instance.new("UIListLayout")
+			local UIListLayout35 = Instance.new("UIListLayout")
 
-			UIListLayout.Parent = ScrollingFrame
-			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+			UIListLayout35.Parent = ScrollingFrame
+			UIListLayout35.HorizontalAlignment = Enum.HorizontalAlignment.Center
+			UIListLayout35.SortOrder = Enum.SortOrder.LayoutOrder
 			
 			for i,v in pairs(options) do 
 				local TextButton = Instance.new("TextButton")
