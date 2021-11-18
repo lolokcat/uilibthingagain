@@ -96,6 +96,7 @@ function lib:CreateWindow(hubname)
         allTabs.Position = UDim2.new(-0.311592698, 0, -0.0318958126, 0)
         allTabs.Size = UDim2.new(0, 159, 0, 401)
         allTabs.ZIndex = 3
+        allTabs.ScrollBarThickness = 0
 
         UICorner_3.CornerRadius = UDim.new(0, 3)
         UICorner_3.Parent = allTabs
