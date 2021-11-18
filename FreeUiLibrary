@@ -371,6 +371,10 @@ function lib:CreateWindow(hubname)
 			UIListLayout35.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout35.SortOrder = Enum.SortOrder.LayoutOrder
 			
+			local function Tween(asset, info, thing)
+				game:GetService("TweenService"):Create(asset, info, thing):Play()
+			end	
+			
 			for i,v in pairs(options) do 
 				local TextButton = Instance.new("TextButton")
 
@@ -391,10 +395,6 @@ function lib:CreateWindow(hubname)
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 				end)
 			end
-			
-			local function Tween(asset, info, thing)
-				game:GetService("TweenService"):Create(asset, info, thing):Play()
-			end	
 			
 			local dropdown = false
 			
