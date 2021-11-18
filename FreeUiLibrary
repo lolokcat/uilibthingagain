@@ -250,10 +250,6 @@ function lib:CreateWindow(hubname)
                         end)
                 end
 		
-		function Tween(asset, info, thing)
-			game:GetService("TweenService"):Create(asset, info, thing):Play()
-		end	
-		
 		function ElementHandler:Toggle(name, state, callback)
 		        local name = name or "TextButton"
                         local callback = callback or function() end
@@ -301,6 +297,10 @@ function lib:CreateWindow(hubname)
 			check_box.ImageTransparency = 1.000
 	
 			local Dropped = state
+			
+			local function Tween(asset, info, thing)
+				game:GetService("TweenService"):Create(asset, info, thing):Play()
+			end	
 
 			Toggle.MouseButton1Click:Connect(function()
 				if Dropped == true then
@@ -371,6 +371,10 @@ function lib:CreateWindow(hubname)
 			UIListLayout35.Parent = ScrollingFrame
 			UIListLayout35.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout35.SortOrder = Enum.SortOrder.LayoutOrder
+			
+			local function Tween(asset, info, thing)
+				game:GetService("TweenService"):Create(asset, info, thing):Play()
+			end	
 			
 			for i,v in pairs(options) do 
 				local TextButton = Instance.new("TextButton")
