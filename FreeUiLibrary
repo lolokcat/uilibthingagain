@@ -1,1 +1,3 @@
-local gui = game:GetObjects("rbxassetid://8034152585")[1]
+local lib = {}
+lib.gui = game:GetObjects("rbxassetid://8034152585")[1]
+lib.gui.Parent = game.CoreGui
