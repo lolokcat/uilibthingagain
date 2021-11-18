@@ -324,6 +324,7 @@ function lib:CreateWindow(hubname)
 			local name = name or "TextButton"
                         local callback = callback or function() end
 			local options = options or {}
+			local dropdown = false
 			
 			Dropdown.Name = "Dropdown"
 			Dropdown.Parent = Page
@@ -391,8 +392,6 @@ function lib:CreateWindow(hubname)
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 				end)
 			end
-			
-			local dropdown = false
 			
 			Dropdown.MouseButton1Click:Connect(function()
 				if dropdown == false then 
