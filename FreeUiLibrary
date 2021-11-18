@@ -259,7 +259,7 @@ function lib:CreateWindow(hubname)
 			local check_box = Instance.new("ImageButton")
 
 			Toggle.Name = "Toggle"
-			Toggle.Parent = game.StarterGui.UI.pageFolder.Page
+			Toggle.Parent = Page
 			Toggle.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 			Toggle.Position = UDim2.new(0.0338809043, 0, 0.0277008303, 0)
 			Toggle.Size = UDim2.new(0, 463, 0, 50)
