@@ -12,7 +12,7 @@ function lib:CreateWindow(hubname)
         local UICorner_2 = Instance.new("UICorner")
         local home = Instance.new("ImageButton")
         local TextLabel = Instance.new("TextLabel")
-        local allTabs = Instance.new("ScrollingFrame")
+        local allTabs = Instance.new("Frame")
         local UICorner_3 = Instance.new("UICorner")
         local UIListLayout_2 = Instance.new("UIListLayout")
         local UIPadding_2 = Instance.new("UIPadding")
@@ -90,13 +90,11 @@ function lib:CreateWindow(hubname)
 
         allTabs.Name = "allTabs"
         allTabs.Parent = Main
-        allTabs.Active = true
         allTabs.BackgroundColor3 = Color3.fromRGB(52, 52, 52)
         allTabs.BorderSizePixel = 0
         allTabs.Position = UDim2.new(-0.311592698, 0, -0.0318958126, 0)
         allTabs.Size = UDim2.new(0, 159, 0, 401)
         allTabs.ZIndex = 3
-        allTabs.ScrollBarTransparency = 1
 
         UICorner_3.CornerRadius = UDim.new(0, 3)
         UICorner_3.Parent = allTabs
