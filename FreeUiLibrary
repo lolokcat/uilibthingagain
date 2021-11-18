@@ -1,0 +1,1 @@
+local gui = game:GetObjects("rbxassetid://8034152585")[1]
