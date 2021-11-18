@@ -29,14 +29,6 @@ function lib:CreateWindow(hubname)
         pageFolder.Name = "pageFolder"
         pageFolder.Parent = UI
 
-        UIListLayout.Parent = Page
-        UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
-        UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
-        UIListLayout.Padding = UDim.new(0, 3)
-
-        UIPadding.Parent = Page
-        UIPadding.PaddingTop = UDim.new(0, 10)
-
         Main.Name = "Main"
         Main.Parent = UI
         Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
@@ -161,6 +153,8 @@ function lib:CreateWindow(hubname)
                 local Page = Instance.new("ScrollingFrame")
                 local TabButton = Instance.new("TextButton")
                 local UICorner_4 = Instance.new("UICorner")
+                local UIListLayout = Instance.new("UIListLayout")
+                local UIPadding = Instance.new("UIPadding")
                 
                 Page.Name = "Page"
                 Page.Parent = pageFolder
@@ -172,6 +166,14 @@ function lib:CreateWindow(hubname)
                 Page.Size = UDim2.new(0, 487, 0, 361)
                 Page.ZIndex = 2
                 Page.ScrollBarThickness = 4
+                
+                UIListLayout.Parent = Page
+                UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+                UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+                UIListLayout.Padding = UDim.new(0, 3)
+
+                UIPadding.Parent = Page
+                UIPadding.PaddingTop = UDim.new(0, 10)
                 
                 TabButton.Name = "TabButton"
                 TabButton.Parent = allTabs
