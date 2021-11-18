@@ -326,7 +326,7 @@ function lib:CreateWindow(hubname)
 			local options = options or {}
 			
 			Dropdown.Name = "Dropdown"
-			Dropdown.Parent = game.StarterGui.UI.pageFolder.Page
+			Dropdown.Parent = Page
 			Dropdown.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
 			Dropdown.Position = UDim2.new(0.0338809043, 0, 0.0277008303, 0)
 			Dropdown.Size = UDim2.new(0, 463, 0, 50)
