@@ -208,7 +208,7 @@ function lib:CreateWindow(hubname)
                         local UICorner = Instance.new("UICorner")
 
                         Button.Name = "Button"
-                        Button.Parent = game.StarterGui.UI.pageFolder.Page
+                        Button.Parent = Page
                         Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
                         Button.Position = UDim2.new(0.0338809043, 0, 0.0277008303, 0)
                         Button.Size = UDim2.new(0, 463, 0, 50)
@@ -225,6 +225,7 @@ function lib:CreateWindow(hubname)
                                 callback()
                         end)
                 end
+                return ElementHandler
         end
         return TabHandler
 end
