@@ -391,7 +391,7 @@ function lib:CreateWindow(hubname)
 				TextButton.MouseButton1Click:Connect(function()
 					callback(TextButton.Text)
 					dropdown = false
-					Tween(Details, TweenInfo.new(0.3), {Rotation = -90})
+					Tween(details, TweenInfo.new(0.3), {Rotation = -90})
 					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 				end)
@@ -400,12 +400,12 @@ function lib:CreateWindow(hubname)
 			Dropdown.MouseButton1Click:Connect(function()
 				if dropdown == false then 
 					dropdown = true
-					Tween(Details, TweenInfo.new(0.3), {Rotation = 0})
+					Tween(details, TweenInfo.new(0.3), {Rotation = 0})
 					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 297)})
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 297)})
 				elseif dropdown == true then
 					dropdown = false
-					Tween(Details, TweenInfo.new(0.3), {Rotation = -90})
+					Tween(details, TweenInfo.new(0.3), {Rotation = -90})
 					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 				end
