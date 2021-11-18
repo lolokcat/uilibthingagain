@@ -199,4 +199,6 @@ function lib:CreateWindow(hubname)
                 Page.Visible = true
                 end)   
         end
+        return TabHandler
 end
+return lib
