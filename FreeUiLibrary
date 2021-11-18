@@ -197,6 +197,34 @@ function lib:CreateWindow(hubname)
                 end 
                 Page.Visible = true
                 end)   
+                
+                local ElementHandler = {}
+                
+                function ElementHandler:Button(name, callback)
+                        local name = name or "TextButton"
+                        local callback = callback or function() end
+                        
+                        local Button = Instance.new("TextButton")
+                        local UICorner = Instance.new("UICorner")
+
+                        Button.Name = "Button"
+                        Button.Parent = game.StarterGui.UI.pageFolder.Page
+                        Button.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+                        Button.Position = UDim2.new(0.0338809043, 0, 0.0277008303, 0)
+                        Button.Size = UDim2.new(0, 463, 0, 50)
+                        Button.AutoButtonColor = false
+                        Button.Font = Enum.Font.Gotham
+                        Button.Text = name
+                        Button.TextColor3 = Color3.fromRGB(255, 255, 255)
+                        Button.TextSize = 19.000
+
+                        UICorner.CornerRadius = UDim.new(0, 3)
+                        UICorner.Parent = Button
+                        
+                        Button.MouseButton1Down:Connect(function()
+                                callback()
+                        end)
+                end
         end
         return TabHandler
 end
