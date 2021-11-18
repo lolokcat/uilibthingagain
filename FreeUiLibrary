@@ -221,7 +221,7 @@ function lib:CreateWindow(hubname)
                         UICorner.CornerRadius = UDim.new(0, 3)
                         UICorner.Parent = Button
                         
-                        Button.MouseButton1Down:Connect(function()
+                        Button.MouseButton1Click:Connect(function()
                                 callback()
                         end)
                 end
@@ -311,6 +311,104 @@ function lib:CreateWindow(hubname)
 					Dropped = true
 					Tween(check_box, TweenInfo.new(0.3), {ImageTransparency = 0})
 					callback(Dropped)
+				end
+			end)
+		end
+		
+		function ElementHandler:Dropdown(name, options, callback)
+			local Dropdown = Instance.new("TextButton")
+			local UICorner = Instance.new("UICorner")
+			local details = Instance.new("ImageButton")
+			local Frame = Instance.new("Frame")
+			local ScrollingFrame = Instance.new("ScrollingFrame")
+			local name = name or "TextButton"
+                        local callback = callback or function() end
+			local options = options or {}
+			
+			Dropdown.Name = "Dropdown"
+			Dropdown.Parent = game.StarterGui.UI.pageFolder.Page
+			Dropdown.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+			Dropdown.Position = UDim2.new(0.0338809043, 0, 0.0277008303, 0)
+			Dropdown.Size = UDim2.new(0, 463, 0, 50)
+			Dropdown.ZIndex = 2
+			Dropdown.AutoButtonColor = false
+			Dropdown.Font = Enum.Font.Gotham
+			Dropdown.TextColor3 = Color3.fromRGB(255, 255, 255)
+			Dropdown.TextSize = 19.000
+
+			UICorner.CornerRadius = UDim.new(0, 3)
+			UICorner.Parent = Dropdown
+
+			details.Name = "details"
+			details.Parent = Dropdown
+			details.BackgroundTransparency = 1.000
+			details.LayoutOrder = 7
+			details.Position = UDim2.new(0.895325601, 0, 0.185600579, 0)
+			details.Rotation = -90.000
+			details.Size = UDim2.new(0, 32, 0, 32)
+			details.ZIndex = 2
+			details.Image = "rbxassetid://3926305904"
+			details.ImageRectOffset = Vector2.new(724, 484)
+			details.ImageRectSize = Vector2.new(36, 36)
+
+			Frame.Parent = Dropdown
+			Frame.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+			Frame.BorderSizePixel = 0
+			Frame.Position = UDim2.new(0, 0, 0.939999998, 0)
+			Frame.Size = UDim2.new(0, 463, 0, 1)
+
+			ScrollingFrame.Parent = Frame
+			ScrollingFrame.Active = true
+			ScrollingFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			ScrollingFrame.BackgroundTransparency = 2.000
+			ScrollingFrame.BorderSizePixel = 0
+			ScrollingFrame.Size = UDim2.new(0, 461, 0, 241)
+			ScrollingFrame.ScrollBarThickness = 5
+			
+			local UIListLayout = Instance.new("UIListLayout")
+
+			UIListLayout.Parent = ScrollingFrame
+			UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+			UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+			
+			for i,v in pairs(options) do 
+				local TextButton = Instance.new("TextButton")
+
+				TextButton.Parent = game.StarterGui.UI.pageFolder.Page.Dropdown.Frame.ScrollingFrame
+				TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+				TextButton.BackgroundTransparency = 1.000
+				TextButton.Size = UDim2.new(0, 463, 0, 50)
+				TextButton.Font = Enum.Font.Gotham
+				TextButton.Text = v
+				TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+				TextButton.TextSize = 25.000
+				
+				TextButton.MouseButton1Click:Connect(function()
+					callback(TextButton.Text)
+					dropdown = false
+					Tween(Details, TweenInfo.new(0.3), {Rotation = -90})
+					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
+					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
+				end)
+			end
+			
+			local function Tween(asset, info, thing)
+				game:GetService("TweenService"):Create(asset, info, thing):Play()
+			end	
+			
+			local dropdown = false
+			
+			Dropdown.MouseButton1Click:Connect(function()
+				if dropdown == false then 
+					dropdown = true
+					Tween(Details, TweenInfo.new(0.3), {Rotation = 0})
+					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 297)})
+					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 297)})
+				elseif dropdown == true then
+					dropdown = false
+					Tween(Details, TweenInfo.new(0.3), {Rotation = -90})
+					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
+					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 				end
 			end)
 		end
