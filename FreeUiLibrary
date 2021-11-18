@@ -3,8 +3,6 @@ local lib = {}
 function lib:CreateWindow(hubname)
         local UI = Instance.new("ScreenGui")
         local pageFolder = Instance.new("Folder")
-        local UIListLayout = Instance.new("UIListLayout")
-        local UIPadding = Instance.new("UIPadding")
         local Main = Instance.new("Frame")
         local UICorner = Instance.new("UICorner")
         local Pattern = Instance.new("ImageLabel")
