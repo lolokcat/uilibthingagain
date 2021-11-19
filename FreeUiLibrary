@@ -466,7 +466,7 @@ function lib:CreateWindow(hubname)
 
 			Frame_3.Parent = Slider
 			Frame_3.BackgroundColor3 = Color3.fromRGB(255, 66, 60)
-			Frame_3.UDim2.new(0.0259179268, 0, 0.440000027, 0)
+			Frame_3.Position = UDim2.new(0.0259179268, 0, 0.440000027, 0)
 			Frame_3.Size = UDim2.new(0, 0, 0, 7)
 
 			UICorner_4.CornerRadius = UDim.new(0, 2)
