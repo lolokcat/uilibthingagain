@@ -494,7 +494,7 @@ function lib:CreateWindow(hubname)
 			    pcall(function()
 				callback(Value)
 			    end)
-			    Frame_3.Size = UDim2.new(0, math.clamp(mouse.X - Frame_2.AbsolutePosition.X, 0, 318), 0, 16)
+			    Frame_3.Size = UDim2.new(0, math.clamp(mouse.X - Frame_3.AbsolutePosition.X, 0, 318), 0, 16)
 			    moveconnection = mouse.Move:Connect(function()
 				TextLabel.Text = Value
 				Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 318) * Frame_3.AbsoluteSize.X) + tonumber(minvalue))
