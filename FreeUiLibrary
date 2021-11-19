@@ -501,7 +501,7 @@ function lib:CreateWindow(hubname)
 				pcall(function()
 				    callback(Value)
 				end)
-				Frame_2.Size = UDim2.new(0, math.clamp(mouse.X - Frame_3.AbsolutePosition.X, 0, 318), 0, 16)
+				Frame_3.Size = UDim2.new(0, math.clamp(mouse.X - Frame_3.AbsolutePosition.X, 0, 318), 0, 16)
 			    end)
 			    releaseconnection = uis.InputEnded:Connect(function(Mouse)
 				if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
