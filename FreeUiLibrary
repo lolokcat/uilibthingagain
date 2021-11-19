@@ -435,9 +435,9 @@ function lib:CreateWindow(hubname)
 					Tween(details, TweenInfo.new(0.3), {Rotation = -90})
 					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
-					wait(0.3)
-					ScrollingFrame.ZIndex = 1
-					Frame.ZIndex = 1
+					for i,v in next(Page) do
+						v.Visible = true
+					end
 				end)
 			end
 			
@@ -447,17 +447,18 @@ function lib:CreateWindow(hubname)
 					Tween(details, TweenInfo.new(0.3), {Rotation = 0})
 					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 297)})
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 297)})
-					wait(0.3)
-					ScrollingFrame.ZIndex = 100
-					Frame.ZIndex = 100
+					for i,v in next(Page) do
+						v.Visible = false
+					end
+					Dropdown.Visible = true
 				elseif dropdown == true then
 					dropdown = false
 					Tween(details, TweenInfo.new(0.3), {Rotation = -90})
 					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
-					wait(0.3)
-					ScrollingFrame.ZIndex = 1
-					Frame.ZIndex = 1
+					for i,v in next(Page) do
+						v.Visible = true
+					end
 				end
 			end)
 		end
