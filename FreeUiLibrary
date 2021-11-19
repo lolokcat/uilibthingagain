@@ -471,7 +471,7 @@ function lib:CreateWindow(hubname)
 
 			UICorner_4.CornerRadius = UDim.new(0, 2)
 			UICorner_4.Parent = Frame_3
-			minvalue = mine or 0
+			minvalue = min or 0
 			maxvalue = max or 100
 
 
