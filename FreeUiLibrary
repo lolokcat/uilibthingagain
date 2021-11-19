@@ -24,95 +24,11 @@ function lib:CreateWindow(hubname)
         UI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
         UI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-        pageFolder.Name = "pageFolder"
-        pageFolder.Parent = UI
-
         Main.Name = "Main"
         Main.Parent = UI
         Main.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
         Main.Position = UDim2.new(0.251830161, 0, 0.425668448, 0)
         Main.Size = UDim2.new(0, 494, 0, 389)
-	
-	local UserInputService = game:GetService("UserInputService")
-
-        local gui = Main
-
-        local dragging
-        local dragInput
-        local dragStart
-        local startPos
-
-        local function update(input)
-        	local delta = input.Position - dragStart
-        	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-        end
-
-        gui.InputBegan:Connect(function(input)
-        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        		dragging = true
-        		dragStart = input.Position
-        		startPos = gui.Position
-        		
-        		input.Changed:Connect(function()
-        			if input.UserInputState == Enum.UserInputState.End then
-        				dragging = false
-        			end
-        		end)
-        	end
-        end)
-
-        gui.InputChanged:Connect(function(input)
-        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-        		dragInput = input
-        	end
-        end)
-
-        UserInputService.InputChanged:Connect(function(input)
-        	if input == dragInput and dragging then
-        		update(input)
-        	end
-        end)
-	for i,v in pairs(pagesFolder:GetChildren()) do 
-	local UserInputService = game:GetService("UserInputService")
-
-        local gui = v
-
-        local dragging
-        local dragInput
-        local dragStart
-        local startPos
-
-        local function update(input)
-        	local delta = input.Position - dragStart
-        	gui.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
-        end
-
-        gui.InputBegan:Connect(function(input)
-        	if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-        		dragging = true
-        		dragStart = input.Position
-        		startPos = gui.Position
-        		
-        		input.Changed:Connect(function()
-        			if input.UserInputState == Enum.UserInputState.End then
-        				dragging = false
-        			end
-        		end)
-        	end
-        end)
-
-        gui.InputChanged:Connect(function(input)
-        	if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
-        		dragInput = input
-        	end
-        end)
-
-        UserInputService.InputChanged:Connect(function(input)
-        	if input == dragInput and dragging then
-        		update(input)
-        	end
-        end)
-	end
 
         UICorner.CornerRadius = UDim.new(0, 3)
         UICorner.Parent = Main
@@ -225,6 +141,9 @@ function lib:CreateWindow(hubname)
         penumbraShadow.ImageTransparency = 0.880
         penumbraShadow.ScaleType = Enum.ScaleType.Slice
         penumbraShadow.SliceCenter = Rect.new(10, 10, 118, 118)
+	
+	pageFolder.Name = "pageFolder"
+        pageFolder.Parent = Main
         
         local TabHandler = {}
         
@@ -241,8 +160,8 @@ function lib:CreateWindow(hubname)
                 Page.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                 Page.BackgroundTransparency = 1.000
                 Page.BorderSizePixel = 0
-                Page.Position = UDim2.new(0.256222546, 0, 0.454545468, 0)
-                Page.Size = UDim2.new(0, 487, 0, 361)
+                Page.Position = UDim2.new(0.010269721, 0, 0.0694087371, 0)
+                Page.Size = UDim2.new(0, 488, 0, 362)
                 Page.ZIndex = 2
                 Page.ScrollBarThickness = 4
                 
