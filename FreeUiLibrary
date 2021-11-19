@@ -219,7 +219,7 @@ function lib:CreateWindow(hubname)
                 TabButton.Position = UDim2.new(0, 0, 0.0598503724, 0)
                 TabButton.Size = UDim2.new(0, 111, 0, 26)
                 TabButton.Font = Enum.Font.Gotham
-                TabButton.Text = "Main"
+                TabButton.Text = name
                 TabButton.TextColor3 = Color3.fromRGB(255, 255, 255)
                 TabButton.TextSize = 14.000
 
@@ -435,6 +435,9 @@ function lib:CreateWindow(hubname)
 					Tween(details, TweenInfo.new(0.3), {Rotation = -90})
 					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
+					wait(0.3)
+					ScrollingFrame.ZIndex = 1
+					Frame.ZIndex = 1
 				end)
 			end
 			
@@ -444,11 +447,17 @@ function lib:CreateWindow(hubname)
 					Tween(details, TweenInfo.new(0.3), {Rotation = 0})
 					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 297)})
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 297)})
+					wait(0.3)
+					ScrollingFrame.ZIndex = 100
+					Frame.ZIndex = 100
 				elseif dropdown == true then
 					dropdown = false
 					Tween(details, TweenInfo.new(0.3), {Rotation = -90})
 					Tween(Frame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
 					Tween(ScrollingFrame, TweenInfo.new(0.3), {Size = UDim2.new(0, 463, 0, 0)})
+					wait(0.3)
+					ScrollingFrame.ZIndex = 1
+					Frame.ZIndex = 1
 				end
 			end)
 		end
