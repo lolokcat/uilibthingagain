@@ -19,6 +19,11 @@ function lib:CreateWindow(hubname)
         local umbraShadow = Instance.new("ImageLabel")
         local ambientShadow = Instance.new("ImageLabel")
         local penumbraShadow = Instance.new("ImageLabel")
+	
+	frame = Main
+	frame.Draggable = true
+	frame.Active = true
+	frame.Selectable = true
 
         UI.Name = "UI"
         UI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
