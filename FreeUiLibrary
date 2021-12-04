@@ -417,7 +417,7 @@ function lib:CreateWindow(hubname)
 			local GridLayout = UIListLayout35
 
 			GridLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
-				sFrame.CanvasSize = UDim2.new(0,GirdLayout.AbsoluteContentSize.X,0,GirdLayout.AbsoluteContentSize.Y)
+				sFrame.CanvasSize = UDim2.new(0,GridLayout.AbsoluteContentSize.X,0,GridLayout.AbsoluteContentSize.Y)
 			end)
 			
 			local function Tween(asset, info, thing)
