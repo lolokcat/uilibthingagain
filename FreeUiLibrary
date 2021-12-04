@@ -413,6 +413,13 @@ function lib:CreateWindow(hubname)
 			UIListLayout35.HorizontalAlignment = Enum.HorizontalAlignment.Center
 			UIListLayout35.SortOrder = Enum.SortOrder.LayoutOrder
 			
+			local sFrame = ScrollingFrame
+			local GridLayout = UIListLayout35
+
+			GridLayout:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
+				sFrame.CanvasSize = UDim2.new(0,GirdLayout.AbsoluteContentSize.X,0,GirdLayout.AbsoluteContentSize.Y)
+			end)
+			
 			local function Tween(asset, info, thing)
 				game:GetService("TweenService"):Create(asset, info, thing):Play()
 			end	
