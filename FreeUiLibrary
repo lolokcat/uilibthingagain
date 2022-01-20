@@ -406,6 +406,7 @@ function lib:CreateWindow(hubname)
 			ScrollingFrame.BorderSizePixel = 0
 			ScrollingFrame.Size = UDim2.new(0, 461, 0, 0)
 			ScrollingFrame.ScrollBarThickness = 5
+			ScrollingFrame.ZIndex = 100
 			
 			local UIListLayout35 = Instance.new("UIListLayout")
 
